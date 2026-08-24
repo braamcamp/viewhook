@@ -64,6 +64,7 @@ ENV APP_ENV=production \
     QUEUE_CONNECTION=database \
     CACHE_STORE=database \
     SESSION_DRIVER=cookie \
+    REVERB_APP_ID=viewhook \
     REVERB_APP_KEY=viewhook \
     REVERB_APP_SECRET=viewhook-secret \
     REVERB_SERVER_HOST=0.0.0.0 \
