@@ -21,9 +21,10 @@ RUN composer dump-autoload --optimize --no-dev
 # Create storage dirs (gitignored) and a minimal .env so artisan can bootstrap during npm build
 RUN mkdir -p storage/framework/views storage/framework/cache storage/framework/sessions bootstrap/cache \
     && echo "APP_KEY=base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" > .env
-# VITE_REVERB_HOST is intentionally empty so the client uses window.location.hostname at runtime.
+# VITE_REVERB_* values are compiled into the frontend bundle at build time.
 # VITE_REVERB_APP_KEY must match the REVERB_APP_KEY env var passed to the container.
 ARG VITE_REVERB_APP_KEY=viewhook
+ARG VITE_REVERB_HOST=viewhook.braamcamp.me
 ARG VITE_REVERB_PORT=8080
 ARG VITE_REVERB_SCHEME=http
 RUN npm run build && rm -f .env
