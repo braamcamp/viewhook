@@ -61,6 +61,7 @@ ENV APP_ENV=production \
     APP_DEBUG=false \
     DB_CONNECTION=sqlite \
     DB_DATABASE=/data/database.sqlite \
+    BROADCAST_CONNECTION=reverb \
     QUEUE_CONNECTION=database \
     CACHE_STORE=database \
     SESSION_DRIVER=cookie \
