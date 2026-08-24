@@ -42,6 +42,7 @@ jobs:
                   context: .
                   platforms: ${{ matrix.platform }}
                   build-args: |
+                      VITE_REVERB_HOST=viewhook.braamcamp.me
                       VITE_REVERB_PORT=443
                       VITE_REVERB_SCHEME=https
                   outputs: type=image,name=ghcr.io/${{ github.repository }},push-by-digest=true,name-canonical=true,push=true
